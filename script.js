@@ -102,6 +102,9 @@ function addAnswerButton(buttonText, nextState) {
     const newElementButton = document.createElement("button");
     newElementButton.textContent = buttonText;
 
+    // Adding ARIA label for accessibility
+    newElementButton.setAttribute("aria-label", `click ${buttonText}`);
+
     // add the button to the ul block in HTML 
     answersNode.appendChild(newElementButton);
 

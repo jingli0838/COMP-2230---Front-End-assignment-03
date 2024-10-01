@@ -7,16 +7,25 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <div id="game-container">
-            <h1 id="game-name"></h1>
-            <div id="question-container">
+        <main id="game-container">
+            <header>
+                <h1 id="game-name"></h1>
+            </header>
+    
+            <section id="question-container">
                 <p id="question"></p>
-            </div>
-            <ul id="answers">
-                <!-- Answer buttons will be injected here by JavaScript -->
-            </ul>
-            <button id="next-btn" onclick="nextQuestion()">Next</button>
-        </div>
+            </section>
+
+            <nav aria-label="Game options">
+                <ul id="answers">
+                    <!-- Answer buttons will be injected here by JavaScript -->
+                </ul>
+            </nav>
+            
+            <footer>
+                <button id="next-btn" aria-label="Click and Start again" onclick="nextQuestion()">Next</button>
+            </footer>
+        </main>
         <script src="script.js"></script>
     </body>
 </html>
