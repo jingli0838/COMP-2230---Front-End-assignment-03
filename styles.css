@@ -45,7 +45,7 @@ body{
     }
 
 #answers button:focus {
-    outline: 2px solid #005fcc;  /* Add a visible focus outline */
+    outline: 2px solid #005fcc; 
     }
 
 
@@ -56,5 +56,5 @@ body{
     }
     
 #next-btn:focus {
-    outline: 2px solid #005fcc;  /* Add a visible focus outline */
+    outline: 2px solid #005fcc; 
 }
