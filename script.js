@@ -40,29 +40,19 @@ function renderQuestion() {
             // set the question text
             questionNode.textContent = startText;
 
-            for(const answer in startButton){
-                if (answer === "yes"){
-                    nextState = "lair";
-                }else{
-                    nextState = "defeat";
-                }
-                addAnswerButton(startButton[answer],nextState);
-            }
-           break;
+            addAnswerButton(startButton.yes,"lair")
+            addAnswerButton(startButton.no,"defeat");
+
+            break;
 
         case "lair":
             const lairButton = {yes:"Yes", no: "No"};
             const lairText = "You reach the monster's icy lair. Do you use your sunglasses to block its freezing gaze?";
             questionNode.textContent = lairText;
 
-            for(const answer in lairButton){
-                if (answer === "yes"){
-                    nextState = "battle";
-                }else{
-                    nextState = "defeat";
-                }
-                addAnswerButton(lairButton[answer],nextState);
-            }
+            addAnswerButton(lairButton.yes, "battle")
+            addAnswerButton(lairButton.no, "defeat");
+            
             break;
 
         case "battle":
@@ -70,14 +60,9 @@ function renderQuestion() {
             const battleText = "You prepare to crow and defeat the monster. Do you crow immediately or wait for the right moment?";
             questionNode.textContent = battleText;
 
-             for(const answer in battleButton){
-                if (answer === "yes"){
-                    nextState = "final";
-                }else{
-                    nextState = "defeat";
-                }
-                addAnswerButton(battleButton[answer],nextState);
-            }
+            addAnswerButton(battleButton.yes, "final");
+            addAnswerButton(battleButton.no, "defeat")
+            
             break;
 
         case "final":
@@ -85,14 +70,9 @@ function renderQuestion() {
             const finalText = "The monster attacks! Do you dodge or stand your ground?";
             questionNode.textContent = finalText;
 
-             for(const answer in finalButton){
-                if (answer === "yes"){
-                    nextState = "victory";
-                }else{
-                    nextState = "defeat";
-                }
-                addAnswerButton(finalButton[answer],nextState);
-            }
+            addAnswerButton(finalButton.yes, "victory")
+            addAnswerButton(finalButton.no, "defeat")
+            
             break;
     }
 }
@@ -116,13 +96,11 @@ function addAnswerButton(buttonText, nextState) {
 }
 
 // create nextQuestion. Only when click the next button, it will be triggered.
-function nextQuestion() {
-    if(nextState === "start"){
+function nextQuestion() { 
         currentState = nextState;
         // restore the nexState to null;
         nextState = null;
         renderQuestion();
-    }
 }
 
 // call the renderQuestion() to run the program
