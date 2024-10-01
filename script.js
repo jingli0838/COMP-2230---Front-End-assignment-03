@@ -2,9 +2,6 @@ let gameName = "Brave Carmela";
 const gameNameNode = document.querySelector("#game-name");
 gameNameNode.textContent = gameName;
 
-// hide the next button 
-const nextButtonNode = document.querySelector("#next-btn");
-nextButtonNode.style.display = "none";
 
 // set the nextState to null
 let nextState = null;
@@ -17,6 +14,9 @@ const answersNode = document.querySelector("#answers");
 function renderQuestion() {
     // clear the old buttons
     answersNode.textContent = "";
+
+    // hide the next button 
+    const nextButtonNode = document.querySelector("#next-btn");
     nextButtonNode.style.display = "none";
     // use switch-case to control the flow fo the project
     switch (currentState){
